@@ -1,5 +1,6 @@
 
-public void main() {
+public void main()
+{
 
     var hello   = "Hello Vistula";
     IO.println(hello);
