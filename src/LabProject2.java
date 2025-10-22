@@ -1,14 +1,25 @@
 
 public void main()
 {
-// Declare all float variables on top
-    float weightEarthVolkov = 75.0F;    // in kilograms
-    float gravityEarth = 9.81F;   // m/s²
-    float gravityMars = 3.721F;   // m/s²
-    double weightMarsVolkov;            // declare variable for result
+    float weightEarthVolkov = 75.0F;
+    float gravityEarth = 9.81F;
+    float gravityMars = 3.721F;
+    double weightMarsVolkov;
 
-// Main logic
+//  logic
     weightMarsVolkov = (weightEarthVolkov / gravityEarth) * gravityMars;
 
-    IO.println("Your weight on Mars is: " + weightMarsVolkov + " kg");
+    IO.println("Weight on Mars is double: " + String.format("%.4f", weightMarsVolkov) + " kg");
+
+    int newWeight = (int) weightMarsVolkov;
+
+    IO.println("Weight on Mars is in int: " + newWeight + " kg");
+
+    String s = String.valueOf(newWeight);
+    char newWeightText = (char) s.charAt(0);
+
+    IO.println("Weight on Mars is in char: " + newWeightText + " kg");
+
+    int result = (int) newWeightText * 2;
+    IO.println("Result is: " + result + " kg");
 }
