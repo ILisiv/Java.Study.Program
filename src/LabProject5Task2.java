@@ -1,4 +1,4 @@
-import java.util.Random;
+
 public static void main()
 {
     int[] arr = new int[10];
