@@ -1,6 +1,7 @@
-public void main()
+import java.util.Random;
+public static void main()
 {
-    int[] arr =new int[10];
+    int[] arr = new int[10];
     Random rand = new Random();
     for (int i = 0; i < arr.length; i++) {
         arr[i] = rand.nextInt(100) + 1;
@@ -15,5 +16,12 @@ public void main()
             max = arr[i];
         }
     }
+    System.out.print("Array: ");
+    for (int num : arr) {
+        System.out.print(num + " ");
+    }
+    System.out.println();
+    System.out.println("Minimum: " + min);
+    System.out.println("Maximum: " + max);
 }
 
