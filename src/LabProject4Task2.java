@@ -1,4 +1,3 @@
-import lombok.*;
 public void main(String[] args)
 {
     Car car1 = new Car("R8", "Audi", 5, 25.000, "Yellow", 1);
