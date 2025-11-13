@@ -14,7 +14,8 @@
             for (int j = 0; j < number.length - 1; j++)
             {
                 Counter++;
-                if (number[j] > number[j + 1]) {
+                if (number[j] > number[j + 1])
+                {
                     Counter++;
                     int greater = number[j];
                     number[j] = number[j + 1];
@@ -22,10 +23,11 @@
                     swap = true;
 
                 }
-                if (!swap) {
-                    System.out.println("\nArray is already sorted after " + (i + 1) + " passes!");
-                    break;
-                }
+
+            }
+            if (!swap) {
+                System.out.println("\nArray is already sorted after " + (i + 1) + " passes!");
+                break;
             }
         }
 
