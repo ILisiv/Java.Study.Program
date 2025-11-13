@@ -1,20 +1,21 @@
         public static void main(String[] args)
     {
-                int[] array = new int[10];
-                Scanner sc = new Scanner(System.in);
-                System.out.println("Please enter starting number: ");
-                int number = sc.nextInt();
+        int[] number = {5, 12, 7, 9, 3, 15, 21, 8, 1, 6};
+        int counter = 0;
+        
+        System.out.println("Before sorting: ");
+        System.out.println(Arrays.toString(number));
+        for(int j = 0; j > number.length; j++)
+        {
+            if(number[j] > number[j + 1])
+            {
+                int greater = number[j];
+                number[j] = number[j + 1];
+                number[j + 1] = greater;
+            }
+        }
 
-                for(int i = 0; i > number; i++) {
-                    if(i % 2 == 0) {
-                        array[i] = i;
-                    }
-                }
 
-                for(int element: array) {
-                    System.out.print(element + " ");
-                }
-            
     }
 
 
