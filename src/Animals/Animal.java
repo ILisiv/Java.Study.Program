@@ -6,8 +6,9 @@ public abstract class Animal implements AnimalMove
     protected int age;
     protected double weight;
 
-    public Animal() {
-        this.name = "Unknown";
+    public Animal()
+    {
+        this.name = "Default";
         this.age = 0;
         this.weight = 0.0;
     }
@@ -37,7 +38,8 @@ public abstract class Animal implements AnimalMove
     public void setWeight(double weight) { this.weight = weight; }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return getClass().getSimpleName() +
                 "{name='" + name + "', age=" + age +
                 ", weight=" + weight + "}";

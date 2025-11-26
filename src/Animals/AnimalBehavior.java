@@ -1,5 +1,6 @@
 package Animals;
 
-public interface AnimalBehavior {
+public interface AnimalBehavior
+{
     void sleep();
 }
