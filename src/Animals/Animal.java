@@ -1,11 +1,16 @@
 package Animals;
 
-public abstract class Animal {
+public abstract class Animal implements AnimalMove
+{
     protected String name;
     protected int age;
     protected double weight;
 
-    public Animal() {}
+    public Animal() {
+        this.name = "Unknown";
+        this.age = 0;
+        this.weight = 0.0;
+    }
 
     public Animal(String name, int age, double weight) {
         this.name = name;
@@ -15,6 +20,8 @@ public abstract class Animal {
 
     public Animal(String name) {
         this.name = name;
+        this.age = 0;
+        this.weight = 0.0;
     }
 
     public abstract void eat();
@@ -31,6 +38,10 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Animal{name='" + name + "', age=" + age + ", weight=" + weight + "}";
+        return getClass().getSimpleName() +
+                "{name='" + name + "', age=" + age +
+                ", weight=" + weight + "}";
     }
 }
+
+

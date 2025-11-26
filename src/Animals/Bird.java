@@ -3,7 +3,10 @@ package Animals;
 public abstract class Bird extends Animal {
     protected String featherColor;
 
-    public Bird() {}
+    public Bird() {
+        super();
+        this.featherColor = "Default";
+    }
 
     public Bird(String name, int age, double weight, String featherColor) {
         super(name, age, weight);
@@ -12,6 +15,7 @@ public abstract class Bird extends Animal {
 
     public Bird(String name) {
         super(name);
+        this.featherColor = "Default";
     }
 
     public String getFeatherColor() { return featherColor; }
@@ -19,6 +23,9 @@ public abstract class Bird extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + ", featherColor='" + featherColor + "'";
+        return getClass().getSimpleName() +
+                "{name='" + name + "', age=" + age +
+                ", weight=" + weight +
+                ", featherColor='" + featherColor + "'}";
     }
 }
