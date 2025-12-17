@@ -12,6 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // Debug info
         System.out.println("Working directory: " + System.getProperty("user.dir"));
 
         Path filePath = Path.of("employees.txt");
@@ -22,36 +23,31 @@ public class Main {
 
         try (BufferedReader reader = Files.newBufferedReader(filePath)) {
             String line;
-            int lineNumber = 0;
 
             while ((line = reader.readLine()) != null) {
-                lineNumber++;
                 line = line.trim();
-
                 if (line.isEmpty()) continue;
 
                 String[] parts = line.split("\\s+");
                 if (parts.length < 2) continue;
 
-                EmployeeTask3 employee =
-                        new EmployeeTask3(parts[0], parts[1]);
-
-                employees.add(employee);
+                employees.add(new EmployeeTask3(parts[0], parts[1]));
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error reading file: " + e.getMessage());
         }
 
         // Size
         System.out.println("\nNumber of employees: " + employees.size());
 
-        // Printing methods
+        // Print using for-each
         System.out.println("\n--- Using enhanced for-each loop ---");
         for (EmployeeTask3 e : employees) {
             System.out.println(e);
         }
 
+        // Print using Iterator
         System.out.println("\n--- Using Iterator ---");
         Iterator<EmployeeTask3> iterator = employees.iterator();
         while (iterator.hasNext()) {

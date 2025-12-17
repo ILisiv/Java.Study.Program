@@ -10,12 +10,12 @@ public class EmployeeTask3 implements Comparable<EmployeeTask3> {
         this.lastName = lastName;
     }
 
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    @Override
-    public String toString() {
-        return firstName + " " + lastName;
+    public String getLastName() {
+        return lastName;
     }
 
     @Override
@@ -26,4 +26,10 @@ public class EmployeeTask3 implements Comparable<EmployeeTask3> {
         }
         return this.firstName.compareToIgnoreCase(other.firstName);
     }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 }
+
