@@ -1,6 +1,7 @@
 package LabProject10Task1;
 
-public class Employee {
+public class Employee
+{
     private final String firstName;
     private final String lastName;
 

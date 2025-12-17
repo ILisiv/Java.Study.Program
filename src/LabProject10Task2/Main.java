@@ -6,7 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args) {
         System.out.println("Working directory: " + System.getProperty("user.dir"));
 
@@ -54,9 +55,8 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("\nNumber of UNIQUE employees: " + employees.size());
+        System.out.println("\n Number of UNIQUE employees: " + employees.size());
 
-        // Because Set has no index, convert once for classic for-loop printing
         List<EmployeeTask2> listView = new ArrayList<>(employees);
 
         System.out.println("\n--- Using classic for loop (via List view) ---");
@@ -74,8 +74,6 @@ public class Main {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
-
-        // contains() demo
         EmployeeTask2 sample = new EmployeeTask2("Ilya", "Volkov");
         System.out.println("\nContains '" + sample + "'? " + employees.contains(sample));
     }

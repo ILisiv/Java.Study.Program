@@ -1,7 +1,6 @@
 package LabProject10Task3;
 
 public class EmployeeTask3 implements Comparable<EmployeeTask3> {
-
     private final String firstName;
     private final String lastName;
 
@@ -10,21 +9,18 @@ public class EmployeeTask3 implements Comparable<EmployeeTask3> {
         this.lastName = lastName;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
 
     @Override
     public int compareTo(EmployeeTask3 other) {
-        int lastNameCompare = this.lastName.compareToIgnoreCase(other.lastName);
-        if (lastNameCompare != 0) {
-            return lastNameCompare;
-        }
-        return this.firstName.compareToIgnoreCase(other.firstName);
+        int last = this.lastName.compareToIgnoreCase(other.lastName);
+        if (last != 0) return last;
+
+        int first = this.firstName.compareToIgnoreCase(other.firstName);
+        if (first != 0) return first;
+
+        return 0;
     }
 
     @Override
@@ -32,4 +28,5 @@ public class EmployeeTask3 implements Comparable<EmployeeTask3> {
         return firstName + " " + lastName;
     }
 }
+
 

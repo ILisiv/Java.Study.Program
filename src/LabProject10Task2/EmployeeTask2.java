@@ -2,7 +2,8 @@ package LabProject10Task2;
 
 import java.util.Objects;
 
-public class EmployeeTask2 {
+public class EmployeeTask2
+{
     private final String firstName;
     private final String lastName;
 
@@ -20,7 +21,8 @@ public class EmployeeTask2 {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (!(o instanceof EmployeeTask2 other)) return false;
         return Objects.equals(firstName, other.firstName)
@@ -28,7 +30,8 @@ public class EmployeeTask2 {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(firstName, lastName);
     }
 }

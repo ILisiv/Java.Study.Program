@@ -8,11 +8,9 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Main {
-
+public class Main
+{
     public static void main(String[] args) {
-
-        // Debug info
         System.out.println("Working directory: " + System.getProperty("user.dir"));
 
         Path filePath = Path.of("employees.txt");
@@ -23,35 +21,37 @@ public class Main {
 
         try (BufferedReader reader = Files.newBufferedReader(filePath)) {
             String line;
+            int lineNumber = 0;
 
             while ((line = reader.readLine()) != null) {
+                lineNumber++;
                 line = line.trim();
                 if (line.isEmpty()) continue;
 
                 String[] parts = line.split("\\s+");
-                if (parts.length < 2) continue;
+                if (parts.length < 2) {
+                    System.out.println("Skipping invalid line " + lineNumber + ": " + line);
+                    continue;
+                }
 
                 employees.add(new EmployeeTask3(parts[0], parts[1]));
             }
-
         } catch (IOException e) {
-            System.err.println("Error reading file: " + e.getMessage());
+            System.err.println(" Error reading file: " + e.getMessage());
+            e.printStackTrace();
         }
 
-        // Size
-        System.out.println("\nNumber of employees: " + employees.size());
+        System.out.println("\n Number of employees: " + employees.size());
 
-        // Print using for-each
-        System.out.println("\n--- Using enhanced for-each loop ---");
+        System.out.println("\n Using enhanced for-each loop ");
         for (EmployeeTask3 e : employees) {
             System.out.println(e);
         }
 
-        // Print using Iterator
-        System.out.println("\n--- Using Iterator ---");
-        Iterator<EmployeeTask3> iterator = employees.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        System.out.println("\n Using Iterator ");
+        Iterator<EmployeeTask3> it = employees.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
         }
     }
 }
